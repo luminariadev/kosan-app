@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="userVBox" fx:controller="com.mykosan.controller.UserController" styleClass="vbox" alignment="TOP_CENTER" prefHeight="600" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="🎉 Selamat Datang Penghuni Kosan!" styleClass="header-label"/>
+    <children>
+        <TabPane fx:id="userTabPane" styleClass="main-tab-pane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Profil">
+                    <content>
+                        <VBox spacing="10">
+                            <Label fx:id="nameLabel" styleClass="header-label" text="Nama" />
+                            <Label fx:id="emailLabel" text="Email" />
+                            <Label fx:id="contactLabel" text="Kontak" />
+                            <Label fx:id="paymentStatusLabel" text="Status Pembayaran" />
+                            <Label fx:id="roomLabel" text="Kamar" />
+                            <Label fx:id="dueNotificationLabel" text="Notifikasi Jatuh Tempo" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Pembayaran Bulanan">
+                    <content>
+                        <VBox spacing="10">
+                            <TableView fx:id="monthlyPaymentsTable" styleClass="data-table">
+                                <columns>
+                                    <TableColumn fx:id="monthColumn" text="Bulan" />
+                                    <TableColumn fx:id="amountColumn" text="Jumlah" />
+                                    <TableColumn fx:id="statusColumn" text="Status" />
+                                    <TableColumn fx:id="paidDateColumn" text="Tanggal Bayar" />
+                                    <TableColumn fx:id="actionColumn" text="Aksi" />
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Tagihan Bersama">
+                    <content>
+                        <VBox spacing="10">
+                            <TableView fx:id="sharedExpensesTable" styleClass="data-table">
+                                <columns>
+                                    <TableColumn fx:id="sharedTitleColumn" text="Judul" />
+                                    <TableColumn fx:id="sharedAmountColumn" text="Jumlah" />
+                                    <TableColumn fx:id="sharedDueDateColumn" text="Tanggal Jatuh Tempo" />
+                                    <TableColumn fx:id="contributionColumn" text="Kontribusi" />
+                                    <TableColumn fx:id="sharedActionColumn" text="Aksi" />
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Riwayat Pembayaran">
+                    <content>
+                        <VBox spacing="10">
+                            <TableView fx:id="paymentHistoryTable" styleClass="data-table">
+                                <columns>
+                                    <TableColumn fx:id="paymentTypeColumn" text="Tipe" />
+                                    <TableColumn fx:id="paymentDescriptionColumn" text="Deskripsi" />
+                                    <TableColumn fx:id="paymentAmountColumn" text="Jumlah" />
+                                    <TableColumn fx:id="paymentDateColumn" text="Tanggal" />
+                                </columns>
+                            </TableView>
+                            <Button fx:id="printReceiptButton" text="Cetak Bukti" onAction="#handlePrintReceipt" styleClass="action-button" />
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" styleClass="action-button" />
+        </HBox>
+    </children>
+</VBox>

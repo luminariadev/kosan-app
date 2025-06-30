@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mykosan.controller.DashboardController"
+      spacing="20" alignment="TOP_CENTER"
+      maxWidth="1000" prefWidth="1000"
+      stylesheets="@/css/dashboard.css"
+      styleClass="vbox">
+
+    <Label text="🎉 Selamat Datang di Dashboard Kosan!" styleClass="header-label"/>
+
+    <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="main-tab-pane">
+        <!-- Tab 1: Daftar Penghuni -->
+        <Tab text="Daftar Penghuni">
+            <VBox spacing="15" styleClass="tab-content">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="➕ Tambah Penghuni" fx:id="addUserButton" onAction="#handleAddUser" styleClass="action-button"/>
+                    <Button text="✏️ Edit Penghuni" fx:id="editUserButton" onAction="#handleEditUser" styleClass="action-button"/>
+                    <Button text="🗑️ Hapus Penghuni" fx:id="deleteUserButton" onAction="#handleDeleteUser" styleClass="action-button"/>
+                </HBox>
+                <TableView fx:id="userTable" styleClass="data-table">
+                    <placeholder><Label text="Tidak ada data pengguna."/></placeholder>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- Tab 2: Pengaturan Kamar -->
+        <Tab text="Pengaturan Kamar">
+            <VBox spacing="15" styleClass="tab-content">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="➕ Tambah Kamar" fx:id="addRoomButton" onAction="#handleAddRoom" styleClass="action-button"/>
+                    <Button text="✏️ Edit Kamar" fx:id="editRoomButton" onAction="#handleEditRoom" styleClass="action-button"/>
+                </HBox>
+                <TableView fx:id="roomTable" styleClass="data-table">
+                    <placeholder><Label text="Tidak ada data kamar."/></placeholder>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- Tab 3: Pembayaran Bulanan -->
+        <Tab text="Pembayaran Bulanan">
+            <VBox spacing="15" styleClass="tab-content">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="paymentSearch" promptText="Cari Penghuni..." styleClass="search-field"/>
+                    <Button text="💰 Catat Pembayaran" fx:id="recordPaymentButton" onAction="#handleRecordPayment" styleClass="action-button"/>
+                </HBox>
+                <TableView fx:id="paymentTable" styleClass="data-table">
+                    <placeholder><Label text="Tidak ada data pembayaran."/></placeholder>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- Tab 4: Tagihan Bersama -->
+        <Tab text="Tagihan Bersama">
+            <VBox spacing="15" styleClass="tab-content">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="🧾 Tambah Tagihan" fx:id="addExpenseButton" onAction="#handleAddExpense" styleClass="action-button"/>
+                    <Button text="💸 Catat Pembayaran" fx:id="recordSharedPaymentButton" onAction="#handleRecordSharedPayment" styleClass="action-button"/>
+                    <ComboBox fx:id="expenseType" promptText="Jenis Tagihan" styleClass="combo-box"/>
+                </HBox>
+                <TableView fx:id="expenseTable" styleClass="data-table">
+                    <placeholder><Label text="Tidak ada data tagihan."/></placeholder>
+                </TableView>
+                <Label text="Pembayaran Tagihan Bersama" styleClass="subheader-label"/>
+                <TableView fx:id="sharedPaymentTable" styleClass="data-table">
+                    <placeholder><Label text="Tidak ada data pembayaran bersama."/></placeholder>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- Tab 5: Laporan Keuangan -->
+        <Tab text="Laporan Keuangan">
+            <VBox spacing="15" styleClass="tab-content">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="reportMonth" promptText="Pilih Bulan" styleClass="combo-box"/>
+                    <Button text="📈 Generate Laporan" fx:id="generateReportButton" onAction="#handleGenerateReport" styleClass="action-button"/>
+                </HBox>
+                <TextArea fx:id="reportOutput" editable="false" wrapText="true" styleClass="report-area"/>
+            </VBox>
+        </Tab>
+
+        <!-- Tab 6: Riwayat Aktivitas -->
+        <Tab text="Riwayat Aktivitas">
+            <VBox spacing="15" styleClass="tab-content">
+                <ListView fx:id="activityLog" styleClass="log-list"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" styleClass="action-button"/>
+    </HBox>
+</VBox>
