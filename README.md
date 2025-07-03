@@ -12,7 +12,7 @@ Aplikasi desktop berbasis JavaFX untuk mengelola keuangan kosan dengan antarmuka
 
 ## 🌟 Apa itu Kosan-App?
 
-**KosanKu** adalah aplikasi desktop berbasis JavaFX yang dirancang untuk mempermudah pengelolaan keuangan kosan. Dengan basis data SQLite yang ringan dan antarmuka yang ramah pengguna, aplikasi ini membantu pemilik kosan mengelola **penghuni**, **kamar**, **pembayaran**, dan **tagihan bersama** secara efisien.
+**Kosan-App** adalah aplikasi desktop berbasis JavaFX yang dirancang untuk mempermudah pengelolaan keuangan kosan. Dengan basis data SQLite yang ringan dan antarmuka yang ramah pengguna, aplikasi ini membantu pemilik kosan mengelola **penghuni**, **kamar**, **pembayaran**, dan **tagihan bersama** secara efisien.
 
 ---
 
