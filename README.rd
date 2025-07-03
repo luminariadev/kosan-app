@@ -1,68 +1,128 @@
-# Aplikasi Manajemen Keuangan Kosan
+Aplikasi Manajemen Keuangan Kosan
+Selamat datang di Aplikasi Manajemen Keuangan Kosan, solusi modern untuk mengelola keuangan kosan Anda secara efisien dan profesional. Dibangun menggunakan JavaFX untuk antarmuka pengguna yang responsif dan SQLite untuk penyimpanan data yang ringan, aplikasi ini dirancang untuk mempermudah pengelolaan kosan dengan fitur-fitur canggih seperti pelacakan pembayaran, pengelolaan tagihan bersama, dan pembuatan laporan keuangan.
+Fitur Utama
 
-Selamat datang di **Aplikasi Manajemen Keuangan Kosan**, solusi modern dan efisien untuk mengelola keuangan kosan Anda! Aplikasi ini dirancang dengan antarmuka yang intuitif berbasis JavaFX dan menggunakan basis data SQLite untuk menyimpan data secara terstruktur. Dengan fitur-fitur canggih seperti pelacakan pembayaran, pengelolaan tagihan bersama, dan laporan keuangan, aplikasi ini membantu Anda mengelola kosan dengan mudah dan profesional.
+Manajemen Penghuni: Tambah, edit, atau hapus data penghuni, termasuk informasi seperti nama, nomor kontak, dan peran (penghuni/admin).
+Pengelolaan Kamar: Kelola informasi kamar, termasuk harga sewa, status ketersediaan, dan detail lainnya.
+Pencatatan Pembayaran: Catat pembayaran bulanan penghuni, lacak status pembayaran (lunas/tertunda), dan kelola riwayat transaksi.
+Tagihan Bersama: Hitung dan bagi tagihan utilitas seperti listrik, air, dan Wi-Fi secara adil antar penghuni.
+Laporan Keuangan: Hasilkan laporan bulanan yang merangkum pemasukan, pengeluaran, dan keuntungan bersih.
+Log Aktivitas: Rekam semua aktivitas sistem untuk memastikan transparansi dan keamanan.
+Antarmuka Intuitif: Desain responsif berbasis JavaFX yang mendukung berbagai ukuran layar dengan gaya modern.
 
-## Fitur Utama
-- **Manajemen Penghuni**: Tambah, edit, atau hapus data penghuni dengan detail seperti nama, kontak, dan peran.
-- **Pengelolaan Kamar**: Kelola informasi kamar termasuk harga dan status ketersediaan.
-- **Pencatatan Pembayaran**: Catat pembayaran bulanan penghuni dan pantau statusnya (pending/lunas).
-- **Tagihan Bersama**: Kelola tagihan seperti listrik, air, dan WiFi dengan pembagian kontribusi penghuni.
-- **Laporan Keuangan**: Buat laporan bulanan untuk melihat total pemasukan, pengeluaran, dan keuntungan bersih.
-- **Log Aktivitas**: Pantau semua aktivitas sistem untuk keamanan dan transparansi.
-- **Antarmuka Responsif**: Desain modern dengan dukungan untuk berbagai ukuran layar.
+Prasyarat
+Untuk menjalankan aplikasi ini, pastikan Anda memiliki perangkat lunak berikut:
 
-## Prasyarat
-Sebelum menjalankan aplikasi, pastikan Anda memiliki perangkat lunak berikut:
-- **JDK 17**: Versi Java Development Kit terbaru untuk kompatibilitas penuh.
-- **Maven 3.6+**: Manajer build untuk mengelola dependensi dan kompilasi.
-- **SQLite**: Diintegrasikan otomatis melalui library `sqlite-jdbc`, tidak perlu instalasi terpisah.
+JDK 17 atau yang lebih baru: Diperlukan untuk menjalankan aplikasi JavaFX.
+Maven 3.6.3 atau yang lebih baru: Untuk mengelola dependensi dan membangun proyek.
+SQLite: Basis data diintegrasikan melalui library sqlite-jdbc, sehingga tidak perlu instalasi terpisah.
 
-## Cara Menjalankan
-Ikuti langkah-langkah berikut untuk memulai aplikasi:
+Instalasi dan Cara Menjalankan
+Ikuti langkah-langkah berikut untuk mengatur dan menjalankan aplikasi:
 
-1. **Clone Repository**:
-   ```bash
-   git clone <url-repo>
-   cd kosan-app
-   ```
-   (Ganti `<url-repo>` dengan URL repository Anda.)
+Clone Repository:
+git clone https://github.com/<username>/kosan-app.git
+cd kosan-app
 
-2. **Konfigurasi Proyek**:
-   - Pastikan koneksi internet aktif untuk mengunduh dependensi Maven.
-   - Verifikasi file `pom.xml` untuk memastikan dependensi seperti `javafx-controls`, `javafx-fxml`, dan `sqlite-jdbc` sudah terdaftar.
+Ganti <username> dengan nama pengguna atau URL repository Anda.
 
-3. **Jalankan Aplikasi**:
-   - Buka terminal di direktori proyek.
-   - Eksekusi perintah berikut untuk membangun dan menjalankan:
-     ```bash
-     mvn clean install
-     mvn javafx:run
-     ```
-   - Aplikasi akan terbuka dengan layar login. Gunakan kredensial admin default (username: "admin", pass "admin123") untuk mengakses dashboard.
+Konfigurasi Proyek:
 
-4. **Inisialisasi Basis Data**:
-   - File `kosan.db.sql` telah disediakan untuk membuat tabel dan memasukkan data awal.
-   - Pastikan file ini dieksekusi melalui SQLite atau diintegrasikan dalam kode untuk pembuatan otomatis (lihat `DBUtil.java`).
+Pastikan koneksi internet aktif untuk mengunduh dependensi Maven.
+Verifikasi file pom.xml untuk memastikan dependensi berikut terdaftar:<dependencies>
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>17</version>
+    </dependency>
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>17</version>
+    </dependency>
+    <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>3.42.0</version>
+    </dependency>
+</dependencies>
 
-## Struktur Proyek
-- **`src/main/java/com.mykosan.controller`**: Berisi `DashboardController.java` untuk logika UI.
-- **`src/main/resources`**: Menyimpan file FXML (`user.fxml`, `login.fxml`) dan CSS (`user.css`, `login.css`).
-- **`kosan.db.sql`**: Skrip SQL untuk membuat dan mengisi basis data.
 
-## Kontribusi
-Kami menyambut kontribusi dari komunitas! Untuk berkontribusi:
-1. Fork repository ini.
-2. Buat branch baru untuk fitur atau perbaikan.
-3. Kirim pull request dengan deskripsi perubahan.
-4. Pastikan kode Anda sesuai dengan standar proyek (JavaFX, Maven, dan dokumentasi).
 
-## Lisensi
-Aplikasi ini dirilis di bawah [Lisensi MIT](LICENSE) – bebas digunakan dan dimodifikasi sesuai kebutuhan.
 
-## Dukungan
-Jika Anda mengalami masalah atau memiliki pertanyaan, silakan buka isu di repository atau hubungi kami melalui email: `rizkianuari83@gmail.com`.
+Bangun dan Jalankan Aplikasi:
 
----
+Buka terminal di direktori proyek.
+Jalankan perintah berikut untuk membangun proyek:mvn clean install
 
-**Versi Awal: 1.0.0**
-*Dikembangkan dengan ❤️ oleh Kelompok 2 PBO 4D – Mulai petualangan manajemen kosan Anda sekarang!*
+
+Jalankan aplikasi dengan:mvn javafx:run
+
+
+Aplikasi akan terbuka dengan layar login. Gunakan kredensial default:
+Username: admin
+Password: admin123
+
+
+
+
+Inisialisasi Basis Data:
+
+File kosan.db.sql berisi skrip SQL untuk membuat tabel dan data awal.
+Jalankan skrip ini melalui SQLite CLI atau pastikan kode dalam DBUtil.java menginisialisasi basis data secara otomatis.
+Contoh perintah untuk menjalankan skrip:sqlite3 kosan.db < kosan.db.sql
+
+
+
+
+
+Struktur Proyek
+Berikut adalah gambaran struktur direktori proyek:
+kosan-app/
+├── src/
+│   ├── main/
+│   │苗   ├── java/
+│   │   ├── com/mykosan/controller/
+│   │   │   └── DashboardController.java
+│   │   ├── com/mykosan/model/
+│   │   │   └── (Kelas model seperti Penghuni.java, Kamar.java, dll.)
+│   │   └── com/mykosan/util/
+│   │       └── DBUtil.java
+│   ├── resources/
+│   │   ├── fxml/
+│   │   │   ├── login.fxml
+│   │   │   └── user.fxml
+│   │   ├── css/
+│   │   │   ├── login.css
+│   │   │   └── user.css
+├── kosan.db.sql
+├── pom.xml
+└── README.md
+
+Kontribusi
+Kami mengundang kontribusi dari komunitas untuk meningkatkan aplikasi ini. Langkah-langkah untuk berkontribusi:
+
+Fork repository ini.
+Buat branch baru untuk fitur atau perbaikan bug:git checkout -b feature/nama-fitur
+
+
+Lakukan perubahan dan uji kode Anda.
+Kirim pull request dengan deskripsi perubahan yang jelas.
+Pastikan kode sesuai dengan standar proyek: gunakan JavaFX, ikuti struktur Maven, dan sertakan dokumentasi.
+
+Lisensi
+Aplikasi ini dirilis di bawah Lisensi MIT. Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode sesuai kebutuhan.
+Dukungan
+Jika Anda mengalami kendala atau memiliki pertanyaan, silakan:
+
+Buka issue di repository GitHub.
+Hubungi kami melalui email: rizkianuari83@gmail.com.
+
+Rencana Pengembangan
+
+Menambahkan fitur ekspor laporan ke PDF/Excel.
+Mendukung autentikasi multi-pengguna dengan peran berbeda.
+Mengintegrasikan notifikasi email untuk pengingat pembayaran.
+
+
+Versi: 1.0.0Dikembangkan dengan penuh semangat oleh Kelompok 2 PBO 4D. Mulai kelola kosan Anda dengan lebih mudah sekarang!
