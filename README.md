@@ -1,4 +1,4 @@
-# 🏠 KosanKu
+# 🏠 Kosan-App
 
 [![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 [![JavaFX](https://img.shields.io/badge/JavaFX-Enabled-green)](https://openjfx.io)
@@ -10,7 +10,7 @@ Aplikasi desktop berbasis JavaFX untuk mengelola keuangan kosan dengan antarmuka
 
 ---
 
-## 🌟 Apa itu KosanKu?
+## 🌟 Apa itu Kosan-App?
 
 **KosanKu** adalah aplikasi desktop berbasis JavaFX yang dirancang untuk mempermudah pengelolaan keuangan kosan. Dengan basis data SQLite yang ringan dan antarmuka yang ramah pengguna, aplikasi ini membantu pemilik kosan mengelola **penghuni**, **kamar**, **pembayaran**, dan **tagihan bersama** secara efisien.
 
@@ -41,7 +41,7 @@ Aplikasi desktop berbasis JavaFX untuk mengelola keuangan kosan dengan antarmuka
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/<username>/kosanku.git
+git clone https://github.com/<username>/kosan-app.git
 cd kosanku
 ```
 
