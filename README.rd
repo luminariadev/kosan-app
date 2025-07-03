@@ -1,72 +1,87 @@
+# 🏠 KosanKu
 
-  
-  🏠 KosanKu
-  Aplikasi desktop berbasis JavaFX untuk mengelola keuangan kosan dengan antarmuka modern dan basis data SQLite.
-  
-  
-  
-    
-    
-    
-    
-    
-  
+Aplikasi desktop berbasis JavaFX untuk mengelola keuangan kosan dengan antarmuka modern dan basis data SQLite.
 
+---
 
+## 🌟 Apa itu KosanKu?
 
-🌟 Apa itu KosanKu?
-KosanKu adalah aplikasi desktop berbasis JavaFX yang dirancang untuk mempermudah pengelolaan keuangan kosan. Dengan basis data SQLite yang ringan dan antarmuka yang ramah pengguna, aplikasi ini membantu pemilik kosan mengelola penghuni, kamar, pembayaran, dan tagihan bersama secara efisien. KosanKu menawarkan solusi modern untuk menjaga transparansi dan kemudahan dalam operasional kosan.
-✨ Fitur Utama
+**KosanKu** adalah aplikasi desktop berbasis JavaFX yang dirancang untuk mempermudah pengelolaan keuangan kosan. Dengan basis data SQLite yang ringan dan antarmuka yang ramah pengguna, aplikasi ini membantu pemilik kosan mengelola **penghuni**, **kamar**, **pembayaran**, dan **tagihan bersama** secara efisien.
 
-🧑 Manajemen Penghuni: Tambah, edit, atau hapus data penghuni dengan informasi seperti nama, kontak, dan peran.
-🏠 Pengelolaan Kamar: Kelola detail kamar, termasuk harga sewa dan status ketersediaan.
-💸 Pencatatan Pembayaran: Catat dan lacak pembayaran bulanan (lunas/tertunda) dengan riwayat transaksi.
-📑 Tagihan Bersama: Hitung dan bagi tagihan utilitas seperti listrik, air, dan Wi-Fi antar penghuni.
-📊 Laporan Keuangan: Hasilkan laporan bulanan untuk pemasukan, pengeluaran, dan keuntungan bersih.
-📜 Log Aktivitas: Rekam semua aktivitas sistem untuk transparansi dan keamanan.
-🖥️ Antarmuka Responsif: Desain modern berbasis JavaFX yang mendukung berbagai ukuran layar.
+---
 
+## ✨ Fitur Utama
 
-🚀 Cara Menjalankan Proyek
-📋 Prasyarat
+- 🧑 **Manajemen Penghuni**: Tambah, edit, atau hapus data penghuni dengan informasi seperti nama, kontak, dan peran.  
+- 🏠 **Pengelolaan Kamar**: Kelola detail kamar, termasuk harga sewa dan status ketersediaan.  
+- 💸 **Pencatatan Pembayaran**: Catat dan lacak pembayaran bulanan (lunas/tertunda) dengan riwayat transaksi.  
+- 📑 **Tagihan Bersama**: Hitung dan bagi tagihan utilitas seperti listrik, air, dan Wi-Fi antar penghuni.  
+- 📊 **Laporan Keuangan**: Hasilkan laporan bulanan untuk pemasukan, pengeluaran, dan keuntungan bersih.  
+- 📜 **Log Aktivitas**: Rekam semua aktivitas sistem untuk transparansi dan keamanan.  
+- 🖥️ **Antarmuka Responsif**: Desain modern berbasis JavaFX yang mendukung berbagai ukuran layar.  
 
-JDK 17 atau yang lebih baru
-Maven 3.6.3 atau yang lebih baru
-SQLite (diintegrasikan via sqlite-jdbc, tidak perlu instalasi terpisah)
-Git
-Text editor (IntelliJ IDEA atau VS Code direkomendasikan)
+---
 
-1. Clone Repository
+## 🚀 Cara Menjalankan Proyek
+
+### 📋 Prasyarat
+
+- JDK 17 atau yang lebih baru  
+- Maven 3.6.3 atau yang lebih baru  
+- SQLite (diintegrasikan via `sqlite-jdbc`, tidak perlu instalasi terpisah)  
+- Git  
+- Text editor (disarankan: IntelliJ IDEA atau VS Code)  
+
+### 1. Clone Repository
+
+```bash
 git clone https://github.com/<username>/kosanku.git
 cd kosanku
+````
 
-Ganti <username> dengan nama pengguna atau URL repository Anda.
-2. Install Dependensi
+> Ganti `<username>` dengan nama pengguna atau URL repository Anda.
+
+### 2. Install Dependensi
+
 Pastikan koneksi internet aktif, lalu jalankan:
+
+```bash
 mvn clean install
+```
 
-Ini akan mengunduh dependensi yang diperlukan, seperti javafx-controls, javafx-fxml, dan sqlite-jdbc, sesuai dengan pom.xml.
-3. Konfigurasi Environment
-Tidak diperlukan file .env karena SQLite menggunakan file lokal (kosan.db). Pastikan file database ada di direktori proyek atau dikonfigurasi di DBUtil.java.
-4. Siapkan Database
+Ini akan mengunduh dependensi seperti `javafx-controls`, `javafx-fxml`, dan `sqlite-jdbc` sesuai `pom.xml`.
 
-Impor file kosan.db.sql untuk membuat struktur tabel dan data awal:sqlite3 kosan.db < kosan.db.sql
+### 3. Konfigurasi Environment
 
+Tidak diperlukan file `.env` karena SQLite menggunakan file lokal (`kosan.db`).
+Pastikan file database ada di direktori proyek atau dikonfigurasi di `DBUtil.java`.
 
-Alternatifnya, aplikasi akan secara otomatis menginisialisasi database jika kode di DBUtil.java telah diatur.
+### 4. Siapkan Database
 
-5. Jalankan Aplikasi
-Jalankan aplikasi dengan:
+Jalankan:
+
+```bash
+sqlite3 kosan.db < kosan.db.sql
+```
+
+Atau biarkan aplikasi membuat database secara otomatis jika kode di `DBUtil.java` telah diatur.
+
+### 5. Jalankan Aplikasi
+
+```bash
 mvn javafx:run
+```
 
-Aplikasi akan terbuka dengan layar login. Gunakan kredensial default:
+Gunakan kredensial default:
 
-Username: admin
-Password: admin123
+* **Username**: `admin`
+* **Password**: `admin123`
 
-Buka aplikasi melalui antarmuka desktop yang muncul.
+---
 
-🗂 Struktur Proyek
+## 🗂 Struktur Proyek
+
+```
 kosanku/
 ├── src/
 │   ├── main/
@@ -87,49 +102,74 @@ kosanku/
 ├── kosan.db.sql          # Skrip SQL untuk database
 ├── pom.xml               # File konfigurasi Maven
 └── README.md             # Dokumentasi proyek
+```
 
+---
 
-🔐 Autentikasi
+## 🔐 Autentikasi
 
-Login Sederhana: Sistem autentikasi berbasis username dan password disimpan di tabel users dalam database SQLite.
-Akses Admin: Admin memiliki hak akses penuh untuk manajemen penghuni, kamar, dan laporan.
-Keamanan: Password disimpan dalam format terenkripsi (disarankan menggunakan hashing di masa depan).
+* **Login Sederhana**: Autentikasi berbasis username dan password disimpan di tabel `users` pada database SQLite.
+* **Akses Admin**: Hak akses penuh untuk manajemen data.
+* **Keamanan**: Password disimpan dalam bentuk terenkripsi (*hashing* disarankan untuk versi selanjutnya).
 
+---
 
-🛠️ Teknologi yang Digunakan
+## 🛠️ Teknologi yang Digunakan
 
-Backend: Java 17, JavaFX
-Database: SQLite
-Frontend: JavaFX (FXML + CSS)
-Build Tool: Maven
-Driver Database: sqlite-jdbc
+* **Backend**: Java 17, JavaFX
+* **Database**: SQLite
+* **Frontend**: JavaFX (FXML + CSS)
+* **Build Tool**: Maven
+* **Driver Database**: `sqlite-jdbc`
 
+---
 
-🧪 Testing
-Saat ini, proyek belum memiliki pengujian otomatis. Untuk pengembangan di masa depan, kami merekomendasikan penggunaan JUnit untuk menguji logika di controller dan util. Contoh pengujian dapat ditambahkan di direktori src/test/java.
+## 🧪 Testing
 
-📝 Catatan Penting
+Belum tersedia pengujian otomatis.
+Untuk pengembangan selanjutnya, disarankan menggunakan **JUnit** untuk menguji logika pada controller dan utilitas.
 
-Database: Pastikan file kosan.db.sql dijalankan untuk membuat tabel seperti penghuni, kamar, dan pembayaran.
-Kebersihan Kode: Pastikan tidak ada file duplikat di direktori proyek untuk menjaga struktur tetap rapi.
-Keamanan: Pertimbangkan untuk mengenkripsi kredensial admin di database untuk keamanan lebih lanjut.
-Kontribusi: Silakan buka issue atau pull request untuk fitur baru atau perbaikan bug.
-JavaFX: Pastikan modul JavaFX diatur dengan benar di module-info.java untuk JDK 17.
+Direktori pengujian yang disarankan:
 
+```
+src/test/java
+```
 
-🎯 Rencana Pengembangan
+---
 
- Integrasi ekspor laporan ke format PDF/Excel.
- Fitur notifikasi untuk pengingat pembayaran.
- Opsi pencarian dan filter untuk penghuni dan kamar.
- Dukungan multi-pengguna dengan autentikasi berbasis token (JWT).
+## 📝 Catatan Penting
 
+* Pastikan file `kosan.db.sql` dijalankan untuk membuat tabel `penghuni`, `kamar`, `pembayaran`, dll.
+* Jaga struktur tetap rapi, hindari file duplikat di direktori proyek.
+* Pertimbangkan penggunaan enkripsi untuk menyimpan kredensial.
+* Kontribusi sangat dihargai. Silakan buka **issue** atau **pull request**.
+* Pastikan modul JavaFX diatur di `module-info.java` untuk kompatibilitas JDK 17.
 
-👨‍💻 Pengembang
-Dikembangkan oleh Kelompok 2 PBO 4D untuk tugas Pemrograman Berorientasi Objek.📧 Hubungi kami melalui rizkianuari83@gmail.com untuk pertanyaan, laporan bug, atau kontribusi.
+---
 
+## 🎯 Rencana Pengembangan
 
-  🌟 Beri bintang di GitHub jika Anda menyukai proyek ini! 🌟
-  Made with ❤️ for efficient boarding house management!
+* Ekspor laporan ke PDF/Excel
+* Fitur notifikasi untuk pengingat pembayaran
+* Pencarian & filter penghuni dan kamar
+* Autentikasi multi-user dengan JWT
 
+---
 
+## 👨‍💻 Pengembang
+
+Dikembangkan oleh **Kelompok 2 PBO 4D** untuk tugas Pemrograman Berorientasi Objek.
+
+📧 Hubungi: [rizkianuari83@gmail.com](mailto:rizkianuari83@gmail.com)
+🌟 Beri bintang ⭐ di GitHub jika kamu suka proyek ini!
+
+---
+
+> Made with ❤️ for efficient boarding house management.
+
+```
+
+---
+
+Jika kamu ingin saya buatkan file `README.md` langsung atau mengonversinya ke PDF/Word, tinggal beri tahu!
+```
