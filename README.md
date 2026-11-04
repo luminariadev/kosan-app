@@ -1,5 +1,6 @@
 # 🏠 Kosan-App
 
+[![Java CI](https://github.com/luminariadev/kosan-app/actions/workflows/ci.yml/badge.svg)](https://github.com/luminariadev/kosan-app/actions/workflows/ci.yml)
 [![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 [![JavaFX](https://img.shields.io/badge/JavaFX-Enabled-green)](https://openjfx.io)
 [![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey)](https://sqlite.org)
@@ -41,11 +42,9 @@ Aplikasi desktop berbasis JavaFX untuk mengelola keuangan kosan dengan antarmuka
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/<username>/kosan-app.git
-cd kosanku
+git clone https://github.com/luminariadev/kosan-app.git
+cd kosan-app
 ```
-
-> Ganti `<username>` dengan nama pengguna atau URL repository Anda.
 
 ### 2. Install Dependensi
 
